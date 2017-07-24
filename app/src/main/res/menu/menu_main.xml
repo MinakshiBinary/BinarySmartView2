@@ -1,0 +1,60 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.app.myapplication.ScrollingActivity">
+    <item
+        android:id="@+id/action_admin"
+        android:orderInCategory="100"
+        android:title="Admin"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_chat"
+        android:orderInCategory="100"
+        android:title="Chat"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_change_password"
+        android:orderInCategory="100"
+        android:title="Change Password"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_meeting_application"
+        android:orderInCategory="100"
+        android:title="Meeting Application"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_change_shift_time"
+        android:orderInCategory="100"
+        android:title="Change Shift Time"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_apply_leave"
+        android:orderInCategory="100"
+        android:title="Apply Leave"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Notification"
+        android:orderInCategory="100"
+        android:title="Notifications"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_rateus"
+        android:orderInCategory="100"
+        android:title="Rate Us"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="Logout"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@mipmap/img_edit"
+        android:orderInCategory="100"
+        android:title="Change"
+        android:visible="false"
+        app:showAsAction="always" />
+</menu>

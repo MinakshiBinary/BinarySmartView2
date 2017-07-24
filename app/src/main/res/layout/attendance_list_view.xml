@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <com.binaryic.binarysmartview.Common.TextAwesome
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/fa_calendar" />
+
+        <TextView
+            android:id="@+id/tv_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/margin_10dp"
+            android:text="07 Apr 2016"
+            android:textColor="#000000"
+            android:textSize="@dimen/margin_15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=" IN : "
+                android:textColor="#000000"
+                android:textSize="@dimen/margin_15dp"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_In_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/my_border_white_gray_border"
+                android:text="10 : 30" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=" Out : "
+                android:textColor="#000000"
+                android:textSize="@dimen/margin_15dp" />
+
+            <TextView
+                android:id="@+id/tv_Out_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/my_border_white_gray_border"
+                android:text="10 : 30" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1dp"
+        android:background="#000" />
+
+</LinearLayout>

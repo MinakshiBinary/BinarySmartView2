@@ -1,0 +1,1792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        //Daily attendance header
+
+        <LinearLayout
+            android:id="@+id/linear_dailyAttendence"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_dailyAttendence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/daily_attendance"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.binaryic.binarysmartview.Common.TextAwesome
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_10dp"
+                        android:text="@string/fa_calendar"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/margin_15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/margin_6dp"
+                        android:text="DAILY ATTENDENCE"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/margin_15dp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        //Daily attendance contain
+
+        <RelativeLayout
+            android:id="@+id/rl_NoData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/margin_20dp"
+                android:text="No Data Available"
+                android:textSize="@dimen/margin_15dp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_LatestDay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_10dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/fa_calendar"
+                    android:textColor="@color/calender_gray" />
+
+                <TextView
+                    android:id="@+id/tv_FirstDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_10dp"
+                    android:text="07 Apr"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/margin_15dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" IN "
+                    android:textColor="@color/calender_gray" />
+
+                <TextView
+                    android:id="@+id/tv_First_In_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/my_border_white_gray_border"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dim80"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="10:30 AM" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text=" Out "
+                    android:textColor="@color/calender_gray" />
+
+                <TextView
+                    android:id="@+id/tv_First_Out_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/my_border_white_gray_border"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dim80"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="10 : 30" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_1dp"
+            android:background="@color/calender_gray" />
+
+        <RelativeLayout
+            android:id="@+id/rl_SecondLatestDay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_10dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/fa_calendar"
+                    android:textColor="@color/calender_gray" />
+
+                <TextView
+                    android:id="@+id/tv_SecondDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_10dp"
+                    android:text="07 Apr"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/margin_15dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:background="@color/white"
+                android:gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" IN "
+                    android:textColor="@color/calender_gray" />
+
+                <TextView
+                    android:id="@+id/tv_Second_In_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/my_border_white_gray_border"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dim80"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="10 : 30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text=" Out "
+                    android:textColor="@color/calender_gray" />
+
+                <TextView
+                    android:id="@+id/tv_Second_Out_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/my_border_white_gray_border"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dim80"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="10 : 30" />
+            </LinearLayout>
+
+        </RelativeLayout>
+        //Monthly attendance header
+
+        <RelativeLayout
+            android:id="@+id/layMonthlyAtt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/monthly_pink"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text="@string/fa_calendar"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="MONTHLY ATTENDENCE"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/tv_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="Apr 2016"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="@string/fa_angle_right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        //Monthly attendance contain
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:weightSum="7">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Calender_Day_First"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:text="SUN"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Date_First"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Dot_First"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="\u2022"
+                    android:textSize="30sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Calender_Day_Second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:text="MON"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Date_Second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Dot_Second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="\u2022"
+                    android:textSize="30sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Calender_Day_Third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:text="TUE"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Date_Third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Dot_Third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="\u2022"
+                    android:textSize="30sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Calender_Day_Fourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:text="WED"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Date_Fourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Dot_Fourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="\u2022"
+                    android:textSize="30sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Calender_Day_Fifth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:text="THU"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Date_Fifth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Dot_Fifth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="\u2022"
+                    android:textSize="30sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Calender_Day_Six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:text="FRI"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Date_Six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Dot_Six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="\u2022"
+                    android:textSize="30sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Calender_Day_Seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:text="SAT"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Date_Seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_Calender_Dot_Seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="\u2022"
+                    android:textSize="30sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+        //UpcomingBirthday Header
+
+        <RelativeLayout
+            android:id="@+id/relative_UpcomingBirthdays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/birthday_green"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text="@string/fa_birthday_cake"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="UPCOMING BIRTHDAYS"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="View All"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="@string/fa_angle_right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        ////UpcomingBirthday contain
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/coverflow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim220"
+            android:layout_gravity="center"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/birthday_img"
+            android:overScrollMode="never" />
+
+        <TextSwitcher
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="16dp"
+            android:visibility="gone" />
+        //Leave Header
+
+        <RelativeLayout
+            android:id="@+id/rl_Leave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/leave_color"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text="@string/fa_file_text_o"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="Leave"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="Apply Leave"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="@string/fa_angle_right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        //Leave Contains
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:weightSum="4">
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="SL"
+                        android:textColor="@color/SL_green_light"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/lblSL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="00"
+                        android:textColor="@color/SL_green_light"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--  <View
+                  android:layout_width="@dimen/margin_1dp"
+                  android:layout_height="match_parent"
+                  android:background="@color/caldroid_gray" />-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="CL"
+                        android:textColor="@color/CL_voilet_light"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/lblCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="00"
+                        android:textColor="@color/CL_voilet_light"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- <View
+                 android:layout_width="@dimen/margin_1dp"
+                 android:layout_height="match_parent"
+                 android:background="@color/caldroid_gray" />-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="PL"
+                        android:textColor="@color/PL_pink_dark"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/lblPL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="00"
+                        android:textColor="@color/PL_pink_dark"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- <View
+                 android:layout_width="@dimen/margin_1dp"
+                 android:layout_height="match_parent"
+                 android:background="@color/caldroid_gray" />
+ -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Total"
+                        android:textColor="@color/Total_green"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/lblTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="00"
+                        android:textColor="@color/Total_green"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        //salary Header
+
+        <RelativeLayout
+            android:id="@+id/rl_salary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/salaryslip_yellow"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text="@string/fa_file_text_o"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="Salary Slip"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="View All"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="@string/fa_angle_right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        //Salary contain
+
+        <RelativeLayout
+            android:id="@+id/layMainSalary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:id="@+id/laySalary1"
+                android:layout_width="@dimen/dim100"
+                android:layout_height="@dimen/dim100"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_20dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_salary"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblSalaryMonth1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="MAR"
+                        android:textColor="@drawable/text_selector"
+                        android:textSize="@dimen/margin_15dp" />
+
+                    <TextView
+                        android:id="@+id/lblSalaryYear1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="2016"
+                        android:textColor="@drawable/text_selector" />
+
+                    <com.binaryic.binarysmartview.Common.TextAwesome
+                        android:id="@+id/imgSalary1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/fa_download"
+                        android:textColor="@drawable/text_selector"
+                        android:textSize="@dimen/margin_15dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/laySalary2"
+                android:layout_width="@dimen/dim100"
+                android:layout_height="@dimen/dim100"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_20dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_salary"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblSalaryMonth2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="MAR"
+                        android:textColor="@drawable/text_selector"
+                        android:textSize="@dimen/margin_15dp" />
+
+                    <TextView
+                        android:id="@+id/lblSalaryYear2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="2016"
+                        android:textColor="@drawable/text_selector" />
+
+                    <com.binaryic.binarysmartview.Common.TextAwesome
+                        android:id="@+id/imgSalary2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/fa_download"
+                        android:textColor="@drawable/text_selector"
+                        android:textSize="@dimen/margin_15dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/laySalary3"
+                android:layout_width="@dimen/dim100"
+                android:layout_height="@dimen/dim100"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_20dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_salary"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblSalaryMonth3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="MAR"
+                        android:textColor="@drawable/text_selector"
+                        android:textSize="@dimen/margin_15dp" />
+
+                    <TextView
+                        android:id="@+id/lblSalaryYear3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="2016"
+                        android:textColor="@drawable/text_selector" />
+
+                    <com.binaryic.binarysmartview.Common.TextAwesome
+                        android:id="@+id/imgSalary3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/fa_download"
+                        android:textColor="@drawable/text_selector" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+        //UpcomingHolidays Header
+
+        <RelativeLayout
+            android:id="@+id/relative_UpcomingHolidays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/holiday_green"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5dp"
+                    android:text="@string/fa_star_o"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="UPCOMING HOLIDAYS"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="View All"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="@string/fa_angle_right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        //UpcomingHolidays contains
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_10dp"
+            android:paddingTop="@dimen/margin_10dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_No_Holiday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_No_Holiday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Happy New Year!!!"
+                    android:textSize="@dimen/margin_18dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_FirstHoliday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:visibility="gone">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/civ_FirstHoliday"
+                    android:layout_width="@dimen/dim80"
+                    android:layout_height="@dimen/dim80"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:src="@drawable/header_thumbnail"
+                    app:civ_border_color="@color/caldroid_darker_gray"
+                    app:civ_border_width="1dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/margin_20dp"
+                    android:layout_toRightOf="@+id/civ_FirstHoliday"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_First_Holiday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GUDI PADWA"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_First_Holiday_Date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8 April 2016"
+                        android:textColor="@color/holiday_green"
+                        android:textSize="@dimen/margin_14dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/margin_1dp"
+                    android:layout_height="@dimen/margin_50dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/margin_6dp"
+                    android:layout_toLeftOf="@+id/tv_First_Holiday_Remaining"
+                    android:background="@color/black"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_First_Holiday_Remaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:text="7 days \n Remaining"
+                    android:textSize="@dimen/margin_15dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_SecondHoliday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/civ_SecondHoliday"
+                    android:layout_width="@dimen/dim80"
+                    android:layout_height="@dimen/dim80"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:src="@drawable/header_thumbnail"
+                    app:civ_border_color="@color/calender_gray"
+                    app:civ_border_width="1dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/margin_20dp"
+                    android:layout_toRightOf="@+id/civ_SecondHoliday"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_Second_Holiday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GUDI PADWA"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_Second_Holiday_Date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8 April 2016"
+                        android:textColor="@color/holiday_green"
+                        android:textSize="@dimen/margin_14dp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/margin_1dp"
+                    android:layout_height="@dimen/margin_50dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/margin_6dp"
+                    android:layout_toLeftOf="@+id/tv_Second_Holiday_Remaining"
+                    android:background="@color/black"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_Second_Holiday_Remaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:text="7 days \n Remaining"
+                    android:textSize="@dimen/margin_15dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_ThirdHoliday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/civ_ThirdHoliday"
+                    android:layout_width="@dimen/dim80"
+                    android:layout_height="@dimen/dim80"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:src="@drawable/header_thumbnail"
+                    app:civ_border_color="@color/caldroid_darker_gray"
+                    app:civ_border_width="1dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/margin_20dp"
+                    android:layout_toRightOf="@+id/civ_ThirdHoliday"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_Third_Holiday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GUDI PADWA"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_Third_Holiday_Date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8 April 2016"
+                        android:textColor="@color/holiday_green"
+                        android:textSize="@dimen/margin_14dp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/margin_1dp"
+                    android:layout_height="@dimen/margin_50dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/margin_6dp"
+                    android:layout_toLeftOf="@+id/tv_Third_Holiday_Remaining"
+                    android:background="@color/black"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_Third_Holiday_Remaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:text="7 days \n Remaining"
+                    android:textSize="@dimen/margin_15dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        //Shift Time Header
+
+        <RelativeLayout
+            android:id="@+id/relative_ShiftChange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/daily_attendance"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text="@string/fa_calendar"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="SHIFT TIME"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="Change Shift Time"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="@string/fa_angle_right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        //Shift Time Contains
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/margin_10dp"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" IN TIME "
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_Shift_In_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/my_border_white_gray_border"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dim80"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="10:30 AM" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text=" OUT TIME "
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_Shift_Out_Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/my_border_white_gray_border"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dim80"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="10:30 AM" />
+            </LinearLayout>
+        </LinearLayout>
+        //Notification header
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_NotificationHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/monthly_pink"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:text="@string/fa_bell_o"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="ANNOUNCEMENTS"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/tv_View"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="View All"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5dp"
+                    android:text="@string/fa_angle_right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        //Notification contains
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rl_NotificationFirst"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/civ_ProfileFirst"
+                android:layout_width="@dimen/dim60"
+                android:layout_height="@dimen/dim60"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:src="@drawable/logo"
+                app:civ_border_color="@color/caldroid_darker_gray"
+                app:civ_border_width="1dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:layout_toRightOf="@+id/civ_ProfileFirst"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:id="@+id/tv_NameFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="THU"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_DateFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="THU"
+                    android:textColor="@color/monthly_pink"
+                    android:textSize="@dimen/margin_14dp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/viewFirst"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1dp"
+                android:layout_below="@+id/civ_ProfileFirst"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:background="@color/calender_gray" />
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:visibility="gone"
+            android:id="@+id/rl_NotificationSecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/civ_ProfileSecond"
+                android:layout_width="@dimen/dim60"
+                android:layout_height="@dimen/dim60"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:src="@drawable/logo"
+                app:civ_border_color="@color/caldroid_darker_gray"
+                app:civ_border_width="1dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:layout_toRightOf="@+id/civ_ProfileSecond"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:id="@+id/tv_NameSecond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="THU"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+
+                    android:id="@+id/tv_DateSecond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="THU"
+                    android:textColor="@color/monthly_pink"
+                    android:textSize="@dimen/margin_14dp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/viewSecond"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1dp"
+                android:layout_below="@+id/civ_ProfileSecond"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:background="@color/calender_gray" />
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rl_NotificationThird"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/civ_ProfileThird"
+                android:layout_width="@dimen/dim60"
+                android:layout_height="@dimen/dim60"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:src="@drawable/logo"
+                app:civ_border_color="@color/caldroid_darker_gray"
+                app:civ_border_width="1dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:layout_toRightOf="@+id/civ_ProfileThird"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_NameThird"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="THU"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/margin_18dp" />
+
+                <TextView
+                    android:id="@+id/tv_DateThird"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="THU"
+                    android:textColor="@color/monthly_pink"
+                    android:textSize="@dimen/margin_14dp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewThird"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1dp"
+                android:layout_below="@+id/civ_ProfileThird"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:background="@color/calender_gray" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.binaryic.binarysmartview.Activity.ReportActivity">
+
+    <include layout="@layout/header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_picture"
+        android:background="@color/monthly_pink"
+        android:fitsSystemWindows="true"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/margin_6dp"
+        android:paddingLeft="@dimen/margin_10dp"
+        android:paddingTop="@dimen/margin_6dp">
+
+        <com.binaryic.binarysmartview.Common.TextAwesome
+            android:id="@+id/ta_Message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/fa_file"
+            android:textColor="@color/white"
+            android:textSize="@dimen/margin_15dp" />
+
+        <TextView
+            android:id="@+id/tv_MessageHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            android:padding="@dimen/margin_6dp"
+            android:text="Report"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/margin_15dp" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8dp"
+        android:background="@drawable/rounded_border"
+        android:padding="4.0dip">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_SelectUser"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp" />
+    </RelativeLayout>
+    <!-- <AutoCompleteTextView
+         android:id="@+id/actv_SelectUser"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="16dp"
+         android:text="Select Employee Name"
+         android:textSize="15sp" />
+ -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_Report"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_NoData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="No Report Available Yet \n For Selected Employee"
+            android:visibility="gone" />
+
+
+
+    </RelativeLayout>
+</LinearLayout>

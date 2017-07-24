@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/calender_red" />
+
+    <stroke
+        android:width="2dp"
+        android:color="@color/calender_gray" />
+
+    <padding
+        android:bottom="8dip"
+        android:left="8dip"
+        android:right="8dip"
+        android:top="8dip" />
+
+    <corners
+        android:bottomLeftRadius="10dip"
+        android:bottomRightRadius="10dip"
+        android:topLeftRadius="10dip"
+        android:topRightRadius="10dip" />
+</shape>
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<declare-styleable name="FeatureCoverFlow">
+        <attr name="coverWidth" format="dimension" />
+        <attr name="coverHeight" format="dimension" />
+        <attr name="spacing" format="float" />
+        <attr name="rotationThreshold" format="float" />
+		<attr name="scalingThreshold" format="float" />
+		<attr name="adjustPositionThreshold" format="float" />
+		<attr name="adjustPositionMultiplier" format="float" />
+		<attr name="maxRotationAngle" format="float" />
+		<attr name="maxScaleFactor" format="float" />
+		<attr name="circlePathRadius" format="float" />
+		<attr name="circlePathRadiusInMatrixSpace" format="float" />
+		<attr name="reflectionHeight" format="float" />
+		<attr name="reflectionGap" format="dimension" />
+		<attr name="reflectionOpacity" format="integer" />
+		<attr name="tunningWidgetSize" format="dimension" />	
+		<attr name="alignAnimationTime" format="integer" />	
+		<attr name="verticalPaddingTop" format="dimension" />	
+		<attr name="verticalPaddingBottom" format="dimension" />	
+		<attr name="reflectionBackroundColor" format="color" />	
+    </declare-styleable>
+    
+	<declare-styleable name="EndlessLoopAdapterContainer">
+        <attr name="shouldRepeat" format="boolean" />
+    </declare-styleable>
+    
+	<declare-styleable name="BasicContentBand">
+        <attr name="gridMode">
+             <flag name="fixed" value="0"/>
+             <flag name="dynamic" value="1"/>
+        </attr>
+        
+        <attr name="deviceSpecificPixelSize" format="integer" />
+    </declare-styleable>
+	<attr name="styleCaldroidViewLayout" format="reference"/>
+	<attr name="styleCaldroidLeftArrow" format="reference"/>
+	<attr name="styleCaldroidRightArrow" format="reference"/>
+	<attr name="styleCaldroidMonthName" format="reference"/>
+	<attr name="styleCaldroidNormalCell" format="reference"/>
+	<attr name="styleCaldroidSquareCell" format="reference"/>
+	<attr name="styleCaldroidGridView" format="reference"/>
+	<attr name="styleCaldroidWeekdayView" format="reference"/>
+
+	<!-- Custom states -->
+	<declare-styleable name="DateState">
+		<attr name="state_date_today" format="boolean"/>
+		<attr name="state_date_selected" format="boolean"/>
+		<attr name="state_date_disabled" format="boolean"/>
+		<attr name="state_date_prev_next_month" format="boolean"/>
+	</declare-styleable>
+
+	<!-- Declare stylable attribute for a cell -->
+	<declare-styleable name="Cell" >
+		<attr name="android:textColor" />
+		<attr name="android:background" />
+	</declare-styleable>
+
+</resources>

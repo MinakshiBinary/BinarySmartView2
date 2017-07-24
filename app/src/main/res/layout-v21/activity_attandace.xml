@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- <android.support.design.widget.AppBarLayout
+                 android:id="@+id/app_bar"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:fitsSystemWindows="true"
+                 android:theme="@style/AppTheme.AppBarOverlay">-->
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:visibility="gone"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@color/monthly_pink">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.flaviofaria.kenburnsview.KenBurnsView
+                    android:id="@+id/header_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:src="@drawable/photo1" />
+                <!-- <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+
+                     android:orientation="vertical">
+
+                     <TextView
+                         android:id="@+id/tv_Name"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:gravity="center"
+                         android:text="UserName"
+                         android:textColor="@color/white"
+                         android:textSize="20sp" />
+
+                     <TextView
+                         android:id="@+id/tv_Designation"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:gravity="center"
+                         android:text="Android Developer"
+                         android:textColor="@color/white"
+                         android:textSize="15sp" />
+                 </LinearLayout>-->
+                <!--  <android.support.design.widget.TabLayout
+                       android:id="@+id/tabs"
+                       style="@style/MyCustomTabLayout"
+                       android:layout_width="match_parent"
+                       android:layout_height="35dp"
+                       android:layout_gravity="bottom"
+                       app:tabMode="scrollable"
+                       app:tabContentStart="0dp"
+                       app:tabGravity="center"
+                       app:tabIndicatorColor="@color/white"
+                       app:tabMaxWidth="0dp"
+                       android:layout_alignParentBottom="true"
+                       android:foregroundGravity="center"
+                       app:tabIndicatorHeight="3dp"
+                       android:layout_marginBottom="24dp"/>-->
+            </RelativeLayout>
+
+            <!-- <android.support.v7.widget.Toolbar
+                  android:id="@+id/toolbar"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  app:layout_collapseMode="pin"
+                  app:popupTheme="@style/AppTheme.PopupOverlay" />
+-->
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <include
+            layout="@layout/header"
+            android:fitsSystemWindows="true" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            style="@style/MyCustomTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/attendance_tablayout_red"
+            android:foregroundGravity="center"
+            app:tabContentStart="0dp"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorHeight="3dp"
+            app:tabMaxWidth="0dp"
+            app:tabMode="scrollable" />
+        <!-- </android.support.design.widget.AppBarLayout>-->
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

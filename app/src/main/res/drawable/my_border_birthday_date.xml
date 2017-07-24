@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/birthday_green" />
+
+    <stroke
+        android:width="2dp"
+        android:color="@color/birthday_green" />
+
+    <padding
+        android:bottom="5dip"
+        android:left="5dip"
+        android:right="5dip"
+        android:top="5dip" />
+
+    <corners
+        android:bottomLeftRadius="3dip"
+        android:bottomRightRadius="3dip"
+        android:topLeftRadius="3dip"
+        android:topRightRadius="3dip" />
+</shape>
+

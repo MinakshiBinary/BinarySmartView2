@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.binaryic.binarysmartview.Activity.AdminActivity">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/MyCustomToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="UserName"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_Designation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Android Developer"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <com.binaryic.binarysmartview.Common.TextAwesome
+                android:id="@+id/ta_LoginUsers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="@string/fa_sign_in"
+                android:textColor="@color/white"
+                android:textSize="@dimen/margin_15dp" />
+
+            <com.binaryic.binarysmartview.Common.TextAwesome
+                android:id="@+id/ta_Report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="@string/fa_file"
+                android:textColor="@color/white"
+                android:textSize="@dimen/margin_15dp" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nsv_AllApplication"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                //leave header
+
+                <RelativeLayout
+                    android:id="@+id/relative_UpcomingBirthdays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/leave_color"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <com.binaryic.binarysmartview.Common.TextAwesome
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_10dp"
+                            android:text="@string/fa_file_text_o"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/margin_15dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/margin_6dp"
+                            android:text="Leave Applications"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/margin_15dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_GetLeaves"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_6dp"
+                            android:text="View All"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/margin_15dp" />
+
+                        <com.binaryic.binarysmartview.Common.TextAwesome
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_5dp"
+                            android:text="@string/fa_angle_right"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/margin_15dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                //leave content
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_Request_Leaves"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/tv_No_Request_Leaves"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/margin_20dp"
+                        android:gravity="center"
+                        android:text="No Leave Application In current Month"
+                        android:textColor="@color/leave_color"
+                        android:textSize="@dimen/margin_15dp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+
+                //Request Shift change header
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/daily_attendance"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <com.binaryic.binarysmartview.Common.TextAwesome
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_10dp"
+                            android:text="@string/fa_calendar"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/margin_15dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/margin_6dp"
+                            android:text="Shift Change Application"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/margin_15dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_GetShiftTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_6dp"
+                            android:text="View All"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/margin_15dp" />
+
+                        <com.binaryic.binarysmartview.Common.TextAwesome
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_5dp"
+                            android:text="@string/fa_angle_right"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/margin_15dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                //Request Shift change content
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_Request_Shift"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/tv_No_Request_Shift"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/margin_20dp"
+                        android:gravity="center"
+                        android:text="No Shift Change Application In current Month"
+                        android:textColor="@color/daily_attendance"
+                        android:textSize="@dimen/margin_15dp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                //Meeting Application header
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/monthly_pink"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <com.binaryic.binarysmartview.Common.TextAwesome
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_10dp"
+                            android:text="@string/fa_users"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/margin_15dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/margin_6dp"
+                            android:text="Meeting Applications"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/margin_15dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_GetMeetingApplication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_6dp"
+                            android:text="View All"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/margin_15dp" />
+
+                        <com.binaryic.binarysmartview.Common.TextAwesome
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_5dp"
+                            android:text="@string/fa_angle_right"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/margin_15dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                //Meeting Application content
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_MeetingApplication"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/tv_No_MeetingApplication"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/margin_20dp"
+                        android:gravity="center"
+                        android:text="No Meeting Scheduled For The Current Month"
+                        android:textColor="@color/monthly_pink"
+                        android:textSize="@dimen/margin_15dp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                //Request InOut change header
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/daily_attendance"
+                    android:orientation="horizontal"
+                    android:padding="2dp"
+                    android:visibility="gone">
+
+                    <com.binaryic.binarysmartview.Common.TextAwesome
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_10dp"
+                        android:text="@string/fa_calendar"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/margin_15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/margin_6dp"
+                        android:text="Request For In-Out Time"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/margin_15dp" />
+                </LinearLayout>
+                //Request InOut change content
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_Request_InOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_SendNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10dp"
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:src="@drawable/ic_send_white_24px"
+            app:backgroundTint="@color/red"
+            app:elevation="6dp"
+            app:layout_behavior="com.binaryic.binarysmartview.Common.FABScrollBehavior"
+            app:layout_anchor="@+id/nsv_AllApplication"
+            app:layout_anchorGravity="bottom|end"
+            app:pressedTranslationZ="12dp" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

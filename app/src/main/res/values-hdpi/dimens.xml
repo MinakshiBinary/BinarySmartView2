@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dim280">246dp</dimen>
+    <dimen name="text50">43sp</dimen>
+    <dimen name="dim80">69dp</dimen>
+    <dimen name="dim100">86dp</dimen>
+    <dimen name="dim115">99dp</dimen>
+    <dimen name="dim_176">-151dp</dimen>
+    <dimen name="dim220">189dp</dimen>
+    <dimen name="dim_206">-177dp</dimen>
+    <dimen name="dim245">210dp</dimen>
+    <dimen name="dim120">103dp</dimen>
+    <dimen name="dim40">34dp</dimen>
+    <dimen name="dim300">258dp</dimen>
+    <dimen name="dim150">129dp</dimen>
+    <dimen name="dim16">16dp</dimen>
+    <dimen name="dim_circleimageview_x_16">16dp</dimen>
+    <dimen name="dim_circleimageview_y_16">-10dp</dimen>
+    <dimen name="dim_user_name_y_18">-10dp</dimen>
+    <dimen name="dim210">179dp</dimen>
+    <dimen name="dim_user_name_y_in_other_page_50">-110dp</dimen>
+    <dimen name="dim_user_details_in_other_page_40">40dp</dimen>
+    <dimen name="dim_in_other_page_206">-206dp</dimen>
+    <dimen name="user_detail_margin_top_70">50dp</dimen>
+    <dimen name="user_detail_margin_top_attendance_70">20dp</dimen>
+    <dimen name="dim_circleimageview_y_below21_16">-10dp</dimen>
+    <dimen name="dim50">50dp</dimen>
+    <dimen name="margin_17dp">17dp</dimen>
+    <dimen name="margin_35dp">35dp</dimen>
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ShowAnnouncementActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header_picture"
+                android:background="@color/monthly_pink"
+                android:fitsSystemWindows="true"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/margin_6dp"
+                android:paddingLeft="@dimen/margin_10dp"
+                android:paddingTop="@dimen/margin_6dp">
+
+                <com.binaryic.binarysmartview.Common.TextAwesome
+                    android:id="@+id/ta_Notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:text="@string/fa_bell_o"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_NoticeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_5dp"
+                    android:layout_toRightOf="@+id/ta_Notice"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="ANNOUNCEMENTS"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+
+                <TextView
+                    android:id="@+id/tv_NoticeDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    android:padding="@dimen/margin_6dp"
+                    android:text="DATE"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/margin_15dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <WebView
+        android:id="@+id/web_View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar"
+        android:scrollbars="none"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_5dp" />
+</RelativeLayout>

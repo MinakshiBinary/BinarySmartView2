@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <RelativeLayout
+        android:id="@+id/rl_GoodMorning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_GoodMorning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Good Morning"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <RelativeLayout
+            android:id="@+id/layTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_GoodMorning"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-9dp"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="09:20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text50"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvAm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_time"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="3dp"
+                android:layout_toEndOf="@+id/tv_time"
+                android:layout_toRightOf="@+id/tv_time"
+                android:text="AM"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layTime"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-9dp"
+            android:gravity="center"
+            android:text="09-May-2016"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearlayout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_LoginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+<RelativeLayout            android:layout_gravity="center"
+
+    android:layout_width="111dp"
+    android:background="@drawable/white_border"
+android:gravity="center"
+
+    android:layout_height="111dp">
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:id="@+id/iv_UserPic"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_width"
+            android:gravity="center" />
+</RelativeLayout>
+        <TextView
+            android:id="@+id/tv_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="bottom|center"
+            android:text="UserName"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_Designation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:text="Designation"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_Quote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:lineSpacingExtra="8dp"
+            android:padding="20dp"
+            android:text="@string/quotes"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_LoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/bt_LoginLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/salaryslip_yellow"
+            android:gravity="center"
+            android:text="Check in"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/bt_Enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="Enter"
+            android:textColor="@color/salaryslip_yellow" />
+    </LinearLayout>
+
+</RelativeLayout>

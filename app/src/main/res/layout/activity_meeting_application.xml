@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_MeetingApplication"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/MyCustomToolbar"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/TextInputTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/et_Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:capitalize="words"
+                    android:hint="Title"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/caldroid_333"
+                    android:textColorHint="@color/caldroid_555"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/TextInputPurpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/et_Purpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:capitalize="words"
+                    android:gravity="top"
+                    android:hint="Purpose"
+                    android:inputType="text"
+                    android:textColor="@color/caldroid_333"
+                    android:textColorHint="@color/caldroid_555"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/TextInputMeetingDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/et_MeetingDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:capitalize="words"
+                    android:cursorVisible="false"
+                    android:hint="Meeting Date"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/caldroid_333"
+                    android:textColorHint="@color/caldroid_555"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/TextInputFromDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/et_FromTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:capitalize="words"
+                    android:cursorVisible="false"
+                    android:hint="From Time"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/caldroid_333"
+                    android:textColorHint="@color/caldroid_555"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/TextInputTodate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/et_ToTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:capitalize="words"
+                    android:cursorVisible="false"
+                    android:hint="To Time"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/caldroid_333"
+                    android:textColorHint="@color/caldroid_555"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_Submit"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:background="@color/red"
+        android:text="Submit"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+</LinearLayout>

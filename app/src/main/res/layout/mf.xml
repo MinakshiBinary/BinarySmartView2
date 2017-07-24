@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.binaryic.binarysmartview.Common.MyLinearLayout
+        android:id="@+id/root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/pagerImg"
+            android:layout_width="@dimen/dim150"
+            android:layout_height="@dimen/dim150"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:civ_border_color="#ffffff"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/lblName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:gravity="center"
+            android:text="Name"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:visibility="visible"
+            android:singleLine="true"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/lblDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="date"
+            android:textColor="@color/caldroid_333"
+            android:textSize="13sp"
+            android:visibility="visible" />
+
+    </com.binaryic.binarysmartview.Common.MyLinearLayout>
+
+</LinearLayout>

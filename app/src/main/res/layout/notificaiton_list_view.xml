@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_5dp"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/rl_Notification"
+
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/civ_Profile"
+            android:layout_width="@dimen/dim60"
+            android:layout_height="@dimen/dim60"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            android:src="@drawable/logo"
+            app:civ_border_color="@color/caldroid_darker_gray"
+            app:civ_border_width="1dp" />
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:layout_marginRight="@dimen/margin_20dp"
+            android:layout_toRightOf="@+id/civ_Profile"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:id="@+id/tv_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:text="THU"
+                android:textColor="@color/black"
+                android:textSize="@dimen/margin_18dp" />
+
+            <TextView
+                android:id="@+id/tv_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:text="THU"
+                android:textColor="@color/button_material_dark"
+                android:textSize="@dimen/margin_14dp" />
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_1dp"
+            android:layout_below="@+id/civ_Profile"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:background="@color/calender_gray" />
+    </RelativeLayout>
+
+        <WebView
+            android:visibility="gone"
+            android:id="@+id/web_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view"
+            />
+
+</LinearLayout>

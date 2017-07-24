@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/MyCustomToolbar"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/TextInputFromDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/txtFromDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:capitalize="words"
+                    android:cursorVisible="false"
+                    android:hint="From Date"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/caldroid_333"
+                    android:textColorHint="@color/caldroid_555"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/TextInputTodate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/txtToDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:capitalize="words"
+                    android:cursorVisible="false"
+                    android:hint="To Date"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/caldroid_333"
+                    android:textColorHint="@color/caldroid_555"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:text="Leave Type" />
+
+            <Spinner
+                android:id="@+id/SpnLeaveRequest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:entries="@array/leave_type" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:text="Leave Duration"
+                android:textColor="@color/caldroid_555" />
+
+            <RadioGroup
+                android:id="@+id/rgLeaveDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/rbFull"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:checked="true"
+                    android:text="Full Day"
+                    android:textColor="@color/caldroid_333"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbHalf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Half Day"
+                    android:textColor="@color/caldroid_333"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/TextInputPurpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/txtPurpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:capitalize="words"
+                    android:hint="Leave Purpose"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/caldroid_333"
+                    android:textColorHint="@color/caldroid_555"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:background="@color/red"
+        android:text="Submit"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+</LinearLayout>
